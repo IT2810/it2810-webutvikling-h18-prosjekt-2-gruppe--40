@@ -20,13 +20,13 @@ class App extends Component {
           <div>
               <Tabs>
                   <div label="Animals">
-                      <ArtSection label="animals"/>
+                      <ArtSection category="animals"/>
                   </div>
                   <div label="Drake">
-                      After 'while, <em>Crocodile</em>!
+                      <ArtSection category="drake"/>
                   </div>
                   <div label="Fruits">
-                      Nothing to see here, this tab is <em>extinct</em>!
+                      <ArtSection category="fruits"/>
                   </div>
               </Tabs>
           </div>
