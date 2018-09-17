@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import apple from './art/animals/graphics/image1.svg'
+import fruit_image1 from './art/fruits/graphics/image1.svg'
 
 class ArtSection extends Component {
     static propTypes = {
@@ -14,9 +14,11 @@ class ArtSection extends Component {
             },
         } = this;
 
-        return (
-            <img src={apple}/>
 
+        let imgpath = "./art/" + label + "/graphics/image2.svg";
+
+        return (
+            <img src={fruit_image1}/>
             )
     }
 }

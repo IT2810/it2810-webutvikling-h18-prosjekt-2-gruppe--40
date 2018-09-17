@@ -20,7 +20,7 @@ class App extends Component {
           <div>
               <Tabs>
                   <div label="Animals">
-                      <ArtSection label="Animals"/>
+                      <ArtSection label="animals"/>
                   </div>
                   <div label="Drake">
                       After 'while, <em>Crocodile</em>!
