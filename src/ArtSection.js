@@ -16,6 +16,7 @@ class ArtSection extends Component {
             imageState: 'option1',
             textState: 'option1',
             soundState: 'option1',
+            svgGraphics: "",
         };
     }
 
@@ -28,11 +29,14 @@ class ArtSection extends Component {
             this.setState({
                 imageState: newState,
             });
+            this.fetchSVG('./art/' + this.props.category + '/graphics/' + newState + '.svg');
+
         } else if (artType === 'text') {
             this.setState({
                 textState: newState,
             });
-            this.fetchText('./art/' + this.props.category + '/text/texts.json', newState)
+            this.fetchText('./art/' + this.props.category + '/text/' + newState + '.json');
+
         } else if (artType === 'sound') {
             this.setState({
                 soundState: newState,
@@ -40,35 +44,28 @@ class ArtSection extends Component {
         }
     }
 
-    fetchText(url, newState){
-        fetch(url).then(res => res.json()).then(
-            (result) => {
-                console.log(result.text1);
-                switch(newState){
-                    case 'option1':
-                        this.setState({
-                            textState: result.text1,
-                        });
-                        break;
-                    case 'option2':
-                        this.setState({
-                            textState: result.text2,
-                        });
-                        break;
-                    case 'option3':
-                        this.setState({
-                            textState: result.text3,
-                        });
-                        break;
-                    case 'option4':
-                        this.setState({
-                            textState: result.text4,
-                        });
-                        break;
-                    default:
-                        break;
-                }
+    fetchSVG(path){
+        fetch(path).then(res => res.text())
+            .then((svg) => {
                 this.setState({
+                    svgGraphics: svg,
+                    isLoaded: true,
+                });
+            }, (error) => {
+                this.setState({
+                    isLoaded: false,
+                    error,
+                });
+                console.log(error);
+
+            })
+    }
+
+    fetchText(path){
+        fetch(path).then(res => res.json()).then(
+            (result) => {
+                this.setState({
+                    textState:result.text,
                     isLoaded: true,
                 });
 
