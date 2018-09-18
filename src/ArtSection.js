@@ -6,6 +6,7 @@ import Text from "./Text";
 import Sound from "./Sound";
 
 
+
 class ArtSection extends Component {
 
     constructor(props) {
@@ -31,11 +32,53 @@ class ArtSection extends Component {
             this.setState({
                 textState: newState,
             });
+            this.fetchText('./art/' + this.props.category + '/text/texts.json', newState)
         } else if (artType === 'sound') {
             this.setState({
                 soundState: newState,
             });
         }
+    }
+
+    fetchText(url, newState){
+        fetch(url).then(res => res.json()).then(
+            (result) => {
+                console.log(result.text1);
+                switch(newState){
+                    case 'option1':
+                        this.setState({
+                            textState: result.text1,
+                        });
+                        break;
+                    case 'option2':
+                        this.setState({
+                            textState: result.text2,
+                        });
+                        break;
+                    case 'option3':
+                        this.setState({
+                            textState: result.text3,
+                        });
+                        break;
+                    case 'option4':
+                        this.setState({
+                            textState: result.text4,
+                        });
+                        break;
+                    default:
+                        break;
+                }
+                this.setState({
+                    isLoaded: true,
+                });
+
+            }, (error)=> {
+                this.setState({
+                    isLoaded: false,
+                    error
+                })
+            }
+        )
     }
 
     render() {
