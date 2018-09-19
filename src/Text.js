@@ -11,7 +11,10 @@ class Text extends Component {
 
     render() {
         return (
-            <p>{this.props.category} text {this.props.textState} goes here</p>
+            <div className="textDiv">
+                <p>{this.props.category} text {this.props.textState} goes here</p>
+            </div>
+
 
         )
     }

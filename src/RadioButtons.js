@@ -25,33 +25,37 @@ class RadioButtons extends Component {
     }
 
     render() {
+        let idName = this.props.artType + "Form";
+
         return (
-            <form onSubmit={this.handleFormSubmit}>
-                <div className="radio">
-                    <label>
-                        <input type="radio" value="option1" checked={this.state.selectedState === 'option1'} onChange={this.handleChange} />
-                        {this.props.children} 1
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input type="radio" value="option2" checked={this.state.selectedState === 'option2'} onChange={this.handleChange}/>
-                        {this.props.children} 2
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input type="radio" value="option3" checked={this.state.selectedState === 'option3'} onChange={this.handleChange}/>
-                        {this.props.children} 3
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input type="radio" value="option4" checked={this.state.selectedState === 'option4'} onChange={this.handleChange}/>
-                        {this.props.children} 4
-                    </label>
-                </div>
-            </form>
+            <div className={idName}>
+                <form onSubmit={this.handleFormSubmit}  >
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value="option1" checked={this.state.selectedState === 'option1'} onChange={this.handleChange} />
+                            {this.props.children} 1
+                        </label>
+                    </div>
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value="option2" checked={this.state.selectedState === 'option2'} onChange={this.handleChange}/>
+                            {this.props.children} 2
+                        </label>
+                    </div>
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value="option3" checked={this.state.selectedState === 'option3'} onChange={this.handleChange}/>
+                            {this.props.children} 3
+                        </label>
+                    </div>
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value="option4" checked={this.state.selectedState === 'option4'} onChange={this.handleChange}/>
+                            {this.props.children} 4
+                        </label>
+                    </div>
+                </form>
+            </div>
         )
     }
 }
