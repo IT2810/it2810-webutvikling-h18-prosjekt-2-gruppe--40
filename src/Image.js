@@ -11,7 +11,7 @@ class Image extends Component {
 
     render() {
         return (
-            <p>{this.props.category} image {this.props.imageState} goes here</p>
+                <div className="imageDiv" dangerouslySetInnerHTML={{__html: this.props.svgGraphics}} />
 
         )
     }

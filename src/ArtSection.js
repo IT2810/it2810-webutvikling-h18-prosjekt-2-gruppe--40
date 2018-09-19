@@ -80,11 +80,11 @@ class ArtSection extends Component {
 
     render() {
         return (
-            <div>
+            <div className="artSectionDiv">
                 <RadioButtons artType="image" changeOption={this.handleOptionChange.bind(this)}>Image</RadioButtons>
                 <RadioButtons artType="text" changeOption={this.handleOptionChange.bind(this)}>Text</RadioButtons>
                 <RadioButtons artType="sound" changeOption={this.handleOptionChange.bind(this)}>Sound</RadioButtons>
-                <Image category={this.props.category} imageState={this.state.imageState}/>
+                <Image category={this.props.category} svgGraphics={this.state.svgGraphics} imageState={this.state.imageState}/>
                 <Text category={this.props.category} textState={this.state.textState}/>
                 <Sound category={this.props.category} soundState={this.state.soundState}/>
             </div>
