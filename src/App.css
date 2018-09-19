@@ -44,3 +44,17 @@
   border: solid #ccc;
   border-width: 1px 1px 0 1px;
 }
+
+.imageDiv {
+  background-color: chartreuse;
+  width: 50%;
+
+}
+
+.artSectionDiv {
+  /*
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  */
+}

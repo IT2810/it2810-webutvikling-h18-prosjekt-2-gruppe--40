@@ -6,6 +6,7 @@ import Text from "./Text";
 import Sound from "./Sound";
 
 
+
 class ArtSection extends Component {
 
     constructor(props) {
@@ -15,6 +16,7 @@ class ArtSection extends Component {
             imageState: 'option1',
             textState: 'option1',
             soundState: 'option1',
+            svgGraphics: "",
         };
     }
 
@@ -27,10 +29,14 @@ class ArtSection extends Component {
             this.setState({
                 imageState: newState,
             });
+            this.fetchSVG('./art/' + this.props.category + '/graphics/' + newState + '.svg');
+
         } else if (artType === 'text') {
             this.setState({
                 textState: newState,
             });
+            this.fetchText('./art/' + this.props.category + '/text/' + newState + '.json');
+
         } else if (artType === 'sound') {
             this.setState({
                 soundState: newState,
@@ -38,13 +44,47 @@ class ArtSection extends Component {
         }
     }
 
+    fetchSVG(path){
+        fetch(path).then(res => res.text())
+            .then((svg) => {
+                this.setState({
+                    svgGraphics: svg,
+                    isLoaded: true,
+                });
+            }, (error) => {
+                this.setState({
+                    isLoaded: false,
+                    error,
+                });
+                console.log(error);
+
+            })
+    }
+
+    fetchText(path){
+        fetch(path).then(res => res.json()).then(
+            (result) => {
+                this.setState({
+                    textState:result.text,
+                    isLoaded: true,
+                });
+
+            }, (error)=> {
+                this.setState({
+                    isLoaded: false,
+                    error
+                })
+            }
+        )
+    }
+
     render() {
         return (
-            <div>
+            <div className="artSectionDiv">
                 <RadioButtons artType="image" changeOption={this.handleOptionChange.bind(this)}>Image</RadioButtons>
                 <RadioButtons artType="text" changeOption={this.handleOptionChange.bind(this)}>Text</RadioButtons>
                 <RadioButtons artType="sound" changeOption={this.handleOptionChange.bind(this)}>Sound</RadioButtons>
-                <Image category={this.props.category} imageState={this.state.imageState}/>
+                <Image category={this.props.category} svgGraphics={this.state.svgGraphics} imageState={this.state.imageState}/>
                 <Text category={this.props.category} textState={this.state.textState}/>
                 <Sound category={this.props.category} soundState={this.state.soundState}/>
             </div>
