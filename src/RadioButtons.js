@@ -12,8 +12,10 @@ class RadioButtons extends Component {
     constructor(props) {
         super(props);
         this.handleChange= this.handleChange.bind(this);
+        var initialOption = 'option' + Math.floor(Math.random() * 4 + 1);
+        this.props.changeOption(this.props.artType,initialOption);
         this.state = {
-            selectedState: 'option1'
+            selectedState: initialOption,
         };
     }
 
