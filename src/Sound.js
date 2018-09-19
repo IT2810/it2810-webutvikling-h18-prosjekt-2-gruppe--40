@@ -11,8 +11,9 @@ class Sound extends Component {
 
     render() {
         return (
-            <p>{this.props.category} sound {this.props.soundState} goes here</p>
-
+            <div>
+                <audio src={ require("./art/" + this.props.category + "/music/" + this.props.soundState + ".mp3")} controls/>
+            </div>
         )
     }
 }
