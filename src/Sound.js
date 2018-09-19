@@ -11,7 +11,7 @@ class Sound extends Component {
 
     render() {
         return (
-            <div>
+            <div className="soundDiv">
                 <audio src={ require("./art/" + this.props.category + "/music/" + this.props.soundState + ".mp3")} controls/>
             </div>
         )

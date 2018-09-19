@@ -22,10 +22,64 @@
   font-size: large;
 }
 
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.artSectionDiv {
+  display: grid;
+  grid-template-areas:
+          ". imageDiv imageForm"
+          ". imageDiv textForm"
+          ". imageDiv soundForm"
+          ". textDiv ."
+          ". soundDiv .";
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+/*Landscape phone*/
+@media screen and (max-width: 800px) {
+  .artSectionDiv {
+    display: grid;
+    grid-template-areas:
+            "imageDiv imageDiv imageForm textForm soundForm"
+            "imageDiv imageDiv imageForm textForm soundForm"
+            "imageDiv imageDiv soundDiv soundDiv soundDiv"
+            "textDiv textDiv textDiv textDiv textDiv ";
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 2px;
+  }
+}
+
+/*Portrait phone*/
+@media screen and (max-width: 510px) {
+  .artSectionDiv {
+    display: grid;
+    grid-template-areas:
+            "imageForm textForm soundForm"
+            "imageDiv imageDiv imageDiv"
+            "imageDiv imageDiv imageDiv"
+            "imageDiv imageDiv imageDiv"
+            "textDiv textDiv textDiv"
+            "soundDiv soundDiv soundDiv";
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 2px;
+  }
+}
+
+
+
+
 
 .tab-list {
   border-bottom: 1px solid #ccc;
@@ -47,14 +101,26 @@
 
 .imageDiv {
   background-color: chartreuse;
-  width: 50%;
-
+  grid-area: imageDiv;
 }
 
-.artSectionDiv {
-  /*
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  */
+.textDiv {
+  grid-area: textDiv;
 }
+
+.soundDiv{
+  grid-area: soundDiv;
+}
+
+.imageForm {
+  grid-area: imageForm;
+}
+
+.textForm {
+  grid-area: textForm;
+}
+
+.soundForm {
+  grid-area: soundForm;
+}
+
