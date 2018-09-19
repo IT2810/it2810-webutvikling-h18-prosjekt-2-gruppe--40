@@ -6,13 +6,15 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
   padding-top: 20px;
+
 }
 
 .App-header {
   background-color: #222;
   height: 150px;
-  padding: -100px;
   color: white;
+    margin-bottom: -16px;
+    padding-bottom: 5px;
 }
 
 .App-title {
@@ -78,13 +80,10 @@
   }
 }
 
-
-
-
-
 .tab-list {
   border-bottom: 1px solid #ccc;
   padding-left: 0;
+    background-color: lightblue;
 }
 
 .tab-list-item {
@@ -103,6 +102,8 @@
 
 .imageDiv {
   grid-area: imageDiv;
+    border: 6px outset orange;
+    background-color: #ffffff;
 }
 
 .textDiv {
@@ -111,6 +112,7 @@
 
 .soundDiv{
   grid-area: soundDiv;
+    /*margin-top: -50px;*/
 }
 
 .imageForm {
@@ -123,5 +125,28 @@
 
 .soundForm {
   grid-area: soundForm;
+}
+
+.text {
+    border: 5px dotted orange;
+    padding: 20px;
+}
+audio {
+    border: 5px outset orange;
+}
+
+audio:hover, audio:focus, audio:active {
+    border: 5px inset orange;
+}
+
+label {
+    cursor: pointer;
+}
+
+.radio:hover {
+    text-decoration: underline;
+}
+input[type='radio'] {
+    transform: scale(1.4);
 }
 
