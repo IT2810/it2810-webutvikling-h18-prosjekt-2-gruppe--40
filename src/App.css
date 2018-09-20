@@ -103,8 +103,6 @@
 
 .imageDiv {
   grid-area: imageDiv;
-    border: 6px outset orange;
-    background-color: #ffffff;
 }
 
 .textDiv {
@@ -138,6 +136,11 @@ audio {
 
 audio:hover, audio:focus, audio:active {
     border: 5px inset orange;
+}
+
+svg {
+    border: 6px outset orange;
+    background-color: #ffffff;
 }
 
 label {
