@@ -12,7 +12,7 @@ class Text extends Component {
     render() {
         return (
             <div className="textDiv">
-                <p>{this.props.textState}</p>
+                <p className="text">{this.props.textState}</p>
             </div>
 
 
