@@ -83,7 +83,7 @@
 .tab-list {
   border-bottom: 1px solid #ccc;
   padding-left: 0;
-    background-color: lightblue;
+    background-color: #222;
 }
 
 .tab-list-item {
@@ -92,6 +92,7 @@
   cursor: pointer;
   margin-bottom: -1px;
   padding: 0.5rem 0.75rem;
+    color: lightseagreen;
 }
 
 .tab-list-active {
