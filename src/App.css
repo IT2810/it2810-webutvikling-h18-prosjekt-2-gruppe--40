@@ -35,14 +35,13 @@
 .artSectionDiv {
   display: grid;
   grid-template-areas:
-          ". imageDiv imageForm"
-          ". imageDiv textForm"
-          ". imageDiv soundForm"
-          ". textDiv ."
-          ". soundDiv .";
+          ". imageDiv imageDiv imageForm ."
+          ". imageDiv imageDiv textForm ."
+          ". imageDiv imageDiv soundForm ."
+          ". textDiv textDiv soundDiv .";
 
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px;
 }
 
@@ -111,7 +110,7 @@
 
 .soundDiv{
   grid-area: soundDiv;
-    /*margin-top: -50px;*/
+    padding-top: 20px;
 }
 
 .imageForm {
@@ -145,6 +144,10 @@ svg {
 
 label {
     cursor: pointer;
+}
+
+.radio{
+    padding: 2px;
 }
 
 .radio:hover {
