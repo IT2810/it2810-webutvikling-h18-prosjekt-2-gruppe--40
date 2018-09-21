@@ -9,6 +9,8 @@ import Tabs from './Tabs';
 import ArtSection from "./ArtSection";
 require('./App.css');
 
+/** This component contains the whole webpage */
+
 class App extends Component {
   render() {
     return (

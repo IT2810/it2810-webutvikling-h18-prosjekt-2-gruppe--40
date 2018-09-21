@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+/** This Component generates the RadioButtons for the given artType */
 
 class RadioButtons extends Component {
-
     static propTypes = {
+        /** String for the given art type (image, text or sound). */
         artType: PropTypes.string.isRequired,
+        /** handleOptionChange function from ArtSection Component */
         changeOption: PropTypes.func.isRequired,
     };
 
     constructor(props) {
         super(props);
         this.handleChange= this.handleChange.bind(this);
+        /** selectedState contains what radiobutton is currently selected. It is initially randomized */
         var initialOption = 'option' + Math.floor(Math.random() * 4 + 1);
         this.props.changeOption(this.props.artType,initialOption);
         this.state = {
@@ -19,6 +22,7 @@ class RadioButtons extends Component {
         };
     }
 
+    /** This function is called when a radio button is pressed and calls the handleOptionChange function in ArtSection */
     handleChange(changeEvent) {
         this.setState({
             selectedState: changeEvent.target.value
@@ -26,6 +30,7 @@ class RadioButtons extends Component {
         this.props.changeOption(this.props.artType,changeEvent.target.value);
     }
 
+    /** Returns 4 radio buttons for the given art type */
     render() {
         let idName = this.props.artType + "Form";
 
