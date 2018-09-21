@@ -1,8 +1,0 @@
-Tabs:
-https://alligator.io/react/tabs-component/
-
-RadioButtons:
-http://react.tips/radio-buttons-in-reactjs/
-
-SVG art:
-https://all-free-download.com/free-vector/download/red-dragon_6818275.html

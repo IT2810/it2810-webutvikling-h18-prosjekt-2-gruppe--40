@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
+/** This Component contains the JSON Text */
 class Text extends Component {
 
     static propTypes = {
-        category: PropTypes.string.isRequired,
+        /** This state contains the Text from the selected option */
         textState: PropTypes.string.isRequired,
     };
 
+    /** Returns the Text */
     render() {
         return (
             <div className="textDiv">
