@@ -28,10 +28,11 @@ class RadioButtons extends Component {
 
     render() {
         let idName = this.props.artType + "Form";
-
+        let formName = this.props.artType;
+        formName = formName.charAt(0).toUpperCase() + formName.substr(1);
         return (
             <div className={idName}>
-                <h3>{this.props.artType}</h3>
+                <h3>{formName}</h3>
                 <form onSubmit={this.handleFormSubmit}  >
                     <div className="radio">
                         <label>
